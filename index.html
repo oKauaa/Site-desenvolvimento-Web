@@ -63,6 +63,11 @@
       border-bottom: 2px solid #eee;
       padding-bottom: 10px;
     }
+    .subtitulo {
+      font-weight: bold;
+      color: #0A3D62;
+      margin-top: 20px;
+    }
     a {
       color: #1E3799;
       text-decoration: none;
@@ -75,9 +80,21 @@
     .contato i {
       margin-right: 8px;
     }
-    ul li {
-      margin-bottom: 10px;
-      line-height: 1.8;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     footer {
       background-color: #0A3D62;
@@ -87,7 +104,6 @@
       font-size: 14px;
     }
 
-    /* Animações */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -115,22 +131,44 @@
 
 <section id="inicio">
   <h2>Página Inicial</h2>
+  <p class="subtitulo">Apresentação da área</p>
   <p>A área de Desenvolvimento Web é uma das mais importantes e dinâmicas dentro da Tecnologia da Informação. Com a crescente digitalização dos serviços, a presença online de empresas, instituições e profissionais se tornou indispensável, fazendo do desenvolvedor web um profissional fundamental para a transformação digital.</p>
 </section>
 
 <section id="profissao">
   <h2>Sobre a Profissão</h2>
-  <p>O profissional de Desenvolvimento Web atua na criação, manutenção e otimização de sites, sistemas e aplicações para internet. Suas atividades envolvem tanto o front-end (parte visual e interativa do site) quanto o back-end (estrutura lógica e funcionamento do servidor), utilizando tecnologias como HTML, CSS, JavaScript, Node.js, PHP, bancos de dados, entre outros.</p>
+  <p class="subtitulo">O que faz um desenvolvedor web?</p>
+  <p>Atua na criação, manutenção e otimização de sites e aplicações web. Pode trabalhar com front-end, back-end ou full stack.</p>
+  <p class="subtitulo">Áreas de atuação:</p>
+  <ul>
+    <li>Agências de marketing e publicidade</li>
+    <li>Startups e empresas de tecnologia</li>
+    <li>Consultorias e equipes internas de TI</li>
+  </ul>
+  <p class="subtitulo">Perfil profissional:</p>
+  <p>Organizado, atento aos detalhes, proativo, criativo e com raciocínio lógico.</p>
 </section>
 
 <section id="dicas">
   <h2>Dicas e Tendências</h2>
-  <ul>
-    <li><strong>Mercado de Trabalho:</strong> Alta demanda por desenvolvedores em empresas de tecnologia, e-commerce, educação e marketing digital.</li>
-    <li><strong>Certificações:</strong> FreeCodeCamp, cursos Microsoft, Alura, Udemy, DIO.</li>
-    <li><strong>Tecnologias Emergentes:</strong> React.js, Vue.js, Next.js, APIs REST, JAMstack.</li>
-    <li><strong>Dica:</strong> Monte um portfólio no GitHub com projetos reais e mantenha seu LinkedIn atualizado.</li>
-  </ul>
+  <div class="cards">
+    <div class="card">
+      <h3>Mercado de Trabalho</h3>
+      <p>Alta demanda em empresas de tecnologia, educação, e-commerce e marketing digital.</p>
+    </div>
+    <div class="card">
+      <h3>Certificações</h3>
+      <p>FreeCodeCamp, cursos Microsoft, Alura, Udemy, DIO.</p>
+    </div>
+    <div class="card">
+      <h3>Tecnologias em Alta</h3>
+      <p>React.js, Vue.js, Next.js, APIs REST, JAMstack.</p>
+    </div>
+    <div class="card">
+      <h3>Dica de Carreira</h3>
+      <p>Monte um portfólio no GitHub e mantenha o LinkedIn atualizado.</p>
+    </div>
+  </div>
 </section>
 
 <section id="contatos">
@@ -141,7 +179,8 @@
 
 <section id="ods">
   <h2>Contribuição para os ODS (Objetivo 9)</h2>
-  <p>O Objetivo de Desenvolvimento Sustentável 9 (Indústria, Inovação e Infraestrutura) é diretamente impactado pela área de Desenvolvimento Web. A criação de soluções digitais promove a inovação tecnológica, melhora a infraestrutura das organizações e democratiza o acesso à informação. Exemplos reais incluem plataformas de ensino online, sistemas de saúde digital, ferramentas de gestão empresarial e iniciativas de inclusão digital.</p>
+  <p>A área de Desenvolvimento Web contribui diretamente para o Objetivo de Desenvolvimento Sustentável 9: Indústria, Inovação e Infraestrutura. Soluções digitais promovem o crescimento econômico, a inclusão digital e a inovação social, ampliando o acesso à informação e serviços essenciais como educação e saúde.</p>
+  <p><a href="https://brasil.un.org/pt-br/sdgs/9" target="_blank">Saiba mais sobre o ODS 9 no site da ONU</a></p>
 </section>
 
 <footer>
