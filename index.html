@@ -20,12 +20,23 @@
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #0A3D62, #1E3799);
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px 60px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      animation: fadeInDown 1s ease-in-out;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
     }
     nav {
       position: sticky;
@@ -55,7 +66,6 @@
       background-color: #ffffff;
       border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      animation: fadeInUp 1s ease-in-out;
     }
     h2 {
       color: #1E3799;
@@ -77,9 +87,6 @@
       text-decoration: underline;
       color: #f6b93b;
     }
-    .contato i {
-      margin-right: 8px;
-    }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -91,10 +98,32 @@
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .contato i {
+      margin-right: 8px;
+    }
+    .resumo-profissao {
+      background-color: #e8f0fe;
+      border-left: 6px solid #1E3799;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 10px;
+    }
+    .resumo-profissao ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .resumo-profissao li::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      color: #1E3799;
+      margin-right: 8px;
     }
     footer {
       background-color: #0A3D62;
@@ -102,15 +131,6 @@
       text-align: center;
       padding: 20px;
       font-size: 14px;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -130,13 +150,23 @@
 </nav>
 
 <section id="inicio">
-  <h2>Página Inicial</h2>
+  <h2><i class="fas fa-globe"></i> Página Inicial</h2>
   <p class="subtitulo">Apresentação da área</p>
   <p>A área de Desenvolvimento Web é uma das mais importantes e dinâmicas dentro da Tecnologia da Informação. Com a crescente digitalização dos serviços, a presença online de empresas, instituições e profissionais se tornou indispensável, fazendo do desenvolvedor web um profissional fundamental para a transformação digital.</p>
 </section>
 
+<section class="resumo-profissao">
+  <h3><i class="fas fa-info-circle"></i> Resumo da Profissão</h3>
+  <ul>
+    <li>Média Salarial Inicial: R$ 2.500 a R$ 4.000</li>
+    <li>Tempo de Formação: 1 a 2 anos (técnico ou tecnólogo)</li>
+    <li>Áreas de Atuação: Front-end, Back-end, Full Stack</li>
+    <li>Habilidades-chave: HTML, CSS, JS, Git, lógica de programação</li>
+  </ul>
+</section>
+
 <section id="profissao">
-  <h2>Sobre a Profissão</h2>
+  <h2><i class="fas fa-user-tie"></i> Sobre a Profissão</h2>
   <p class="subtitulo">O que faz um desenvolvedor web?</p>
   <p>Atua na criação, manutenção e otimização de sites e aplicações web. Pode trabalhar com front-end, back-end ou full stack.</p>
   <p class="subtitulo">Áreas de atuação:</p>
@@ -150,35 +180,35 @@
 </section>
 
 <section id="dicas">
-  <h2>Dicas e Tendências</h2>
+  <h2><i class="fas fa-lightbulb"></i> Dicas e Tendências</h2>
   <div class="cards">
     <div class="card">
-      <h3>Mercado de Trabalho</h3>
+      <h3><i class="fas fa-briefcase"></i> Mercado de Trabalho</h3>
       <p>Alta demanda em empresas de tecnologia, educação, e-commerce e marketing digital.</p>
     </div>
     <div class="card">
-      <h3>Certificações</h3>
+      <h3><i class="fas fa-certificate"></i> Certificações</h3>
       <p>FreeCodeCamp, cursos Microsoft, Alura, Udemy, DIO.</p>
     </div>
     <div class="card">
-      <h3>Tecnologias em Alta</h3>
+      <h3><i class="fas fa-laptop-code"></i> Tecnologias em Alta</h3>
       <p>React.js, Vue.js, Next.js, APIs REST, JAMstack.</p>
     </div>
     <div class="card">
-      <h3>Dica de Carreira</h3>
+      <h3><i class="fas fa-user-check"></i> Dica de Carreira</h3>
       <p>Monte um portfólio no GitHub e mantenha o LinkedIn atualizado.</p>
     </div>
   </div>
 </section>
 
 <section id="contatos">
-  <h2>Redes e Contatos</h2>
+  <h2><i class="fas fa-address-book"></i> Redes e Contatos</h2>
   <p class="contato"><i class="fab fa-github"></i><strong> GitHub:</strong> <a href="https://github.com/oKauaa" target="_blank">github.com/oKauaa</a></p>
   <p class="contato"><i class="fab fa-linkedin"></i><strong> LinkedIn:</strong> <a href="https://www.linkedin.com/in/kau%C3%A3-marques-797b76357/" target="_blank">linkedin.com/in/kauã-marques</a></p>
 </section>
 
 <section id="ods">
-  <h2>Contribuição para os ODS (Objetivo 9)</h2>
+  <h2><i class="fas fa-seedling"></i> Contribuição para os ODS (Objetivo 9)</h2>
   <p>A área de Desenvolvimento Web contribui diretamente para o Objetivo de Desenvolvimento Sustentável 9: Indústria, Inovação e Infraestrutura. Soluções digitais promovem o crescimento econômico, a inclusão digital e a inovação social, ampliando o acesso à informação e serviços essenciais como educação e saúde.</p>
   <p><a href="https://brasil.un.org/pt-br/sdgs/9" target="_blank">Saiba mais sobre o ODS 9 no site da ONU</a></p>
 </section>
