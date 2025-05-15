@@ -10,19 +10,22 @@
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: 'Roboto', sans-serif;
-      margin: 0;
       background-color: #f4f7fa;
       color: #333;
+      line-height: 1.6;
     }
     header {
-      background-color: #0A3D62;
+      background: linear-gradient(135deg, #0A3D62, #1E3799);
       color: white;
-      padding: 50px 20px;
+      padding: 60px 20px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      animation: fadeInDown 1s ease-in-out;
     }
     nav {
       position: sticky;
@@ -35,33 +38,46 @@
     }
     nav a {
       color: #fff;
-      margin: 0 20px;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
+      display: inline-block;
     }
     nav a:hover {
       color: #f6b93b;
+      transform: scale(1.1);
     }
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 1000px;
-      margin: 30px auto;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease-in-out;
     }
     h2 {
       color: #1E3799;
+      margin-bottom: 15px;
       border-bottom: 2px solid #eee;
       padding-bottom: 10px;
     }
     a {
       color: #1E3799;
       text-decoration: none;
+      transition: color 0.3s;
     }
     a:hover {
       text-decoration: underline;
+      color: #f6b93b;
+    }
+    .contato i {
+      margin-right: 8px;
+    }
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.8;
     }
     footer {
       background-color: #0A3D62;
@@ -69,14 +85,16 @@
       text-align: center;
       padding: 20px;
       font-size: 14px;
-      margin-top: 40px;
     }
-    ul li {
-      margin-bottom: 10px;
-      line-height: 1.6;
+
+    /* Animações */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .contato i {
-      margin-right: 8px;
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -84,7 +102,7 @@
 
 <header>
   <h1>Profissão: Desenvolvimento Web</h1>
-  
+  <p>Site acadêmico criado por Kauã Valério Marques Da Silva</p>
 </header>
 
 <nav>
@@ -127,7 +145,7 @@
 </section>
 
 <footer>
-  <p>&copy; 2025 - Kauã Valério Marques Da Silva | GTI - UNIG</p>
+  <p>&copy; 2025 - Kauã Valério Marques Da Silva | Aluno de Gestão da Tecnologia da Informação - UNIG</p>
 </footer>
 
 </body>
