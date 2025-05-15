@@ -3,44 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Desenvolvimento Web | Kauã Marques</title>
+  <title>Desenvolvimento Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #f4f7fa;
-      --text: #222;
-      --primary: #1E3799;
-      --highlight: #f6b93b;
-      --neon: #ffff33;
-    }
-
-    [data-theme="dark"] {
-      --bg: #121212;
-      --text: #f5f5f5;
-      --primary: #4dabf7;
-      --highlight: #ffe066;
-      --neon: #ffff33;
-    }
-
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
+      margin: 0; padding: 0;
       scroll-behavior: smooth;
-      font-family: 'Poppins', sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      line-height: 1.6;
       display: flex;
+      min-height: 100vh;
       flex-direction: column;
     }
     header {
       position: relative;
-      background: url('https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
       height: 320px;
       color: white;
       text-align: center;
@@ -48,7 +31,6 @@
       flex-direction: column;
       justify-content: center;
       padding: 0 20px;
-      overflow: hidden;
     }
     header::before {
       content: '';
@@ -56,7 +38,6 @@
       inset: 0;
       background-color: rgba(0,0,0,0.55);
       z-index: 0;
-      transition: background-color 0.3s ease;
     }
     header h1, header p, header button {
       position: relative;
@@ -66,42 +47,37 @@
       font-size: 2.8rem;
       margin-bottom: 12px;
       font-weight: 700;
-      user-select: none;
     }
     header p {
       font-size: 1.2rem;
       margin-bottom: 20px;
       font-weight: 400;
-      user-select: none;
     }
     header button {
       padding: 12px 30px;
       font-size: 1.1rem;
-      background-color: var(--neon);
+      background-color: #f6b93b;
       border: none;
       border-radius: 30px;
       cursor: pointer;
       color: #222;
       font-weight: 700;
-      box-shadow: 0 0 12px var(--neon), 0 0 30px var(--neon);
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
+      box-shadow: 0 4px 12px rgba(246,185,59,0.5);
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
     header button:hover {
-      background-color: var(--neon);
+      background-color: #e1a52f;
       transform: scale(1.05);
-      box-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon);
     }
 
     nav {
-      background-color: var(--primary);
+      background-color: #1E3799;
       text-align: center;
       padding: 14px 0;
       position: sticky;
       top: 0;
       z-index: 100;
       box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-      backdrop-filter: saturate(180%) blur(8px);
     }
     nav a {
       color: white;
@@ -112,10 +88,9 @@
       transition: color 0.3s ease, transform 0.3s ease;
       display: inline-block;
       padding: 6px 0;
-      user-select: none;
     }
     nav a:hover {
-      color: var(--highlight);
+      color: #f6b93b;
       transform: scale(1.1);
     }
 
@@ -126,15 +101,15 @@
       padding: 0 20px;
       display: flex;
       gap: 30px;
-      user-select: text;
     }
 
+    
     aside#resumo {
       position: sticky;
       top: 100px;
       flex-basis: 280px;
       background: #e8f0fe;
-      border-left: 6px solid var(--primary);
+      border-left: 6px solid #1E3799;
       padding: 20px;
       border-radius: 12px;
       height: fit-content;
@@ -143,94 +118,79 @@
       display: none;
       flex-direction: column;
       gap: 12px;
-      user-select: text;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    [data-theme="dark"] aside#resumo {
-      background: #222;
     }
     aside#resumo h3 {
-      color: var(--primary);
+      color: #1E3799;
       font-weight: 700;
       margin-bottom: 12px;
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 2px solid #1E3799;
       padding-bottom: 8px;
       font-size: 1.2rem;
-      user-select: none;
     }
     aside#resumo ul {
       list-style: none;
-      user-select: text;
     }
     aside#resumo ul li {
       margin-bottom: 8px;
       padding-left: 26px;
       position: relative;
       line-height: 1.3;
-      user-select: text;
     }
     aside#resumo ul li::before {
-      content: "\\f058";
+      content: "\f058";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
-      color: var(--primary);
-      margin-right: 8px;
+      color: #1E3799;
       position: absolute;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
       font-size: 1rem;
-      user-select: none;
     }
 
+    
     section.content {
       flex: 1;
       display: flex;
       flex-direction: column;
       gap: 40px;
-      user-select: text;
     }
 
     section.content h2 {
-      color: var(--primary);
+      color: #1E3799;
       font-size: 2rem;
       margin-bottom: 16px;
-      border-bottom: 3px solid var(--highlight);
+      border-bottom: 3px solid #f6b93b;
       padding-bottom: 6px;
       display: flex;
       align-items: center;
       gap: 12px;
-      user-select: none;
     }
     section.content h2 i {
-      color: var(--highlight);
+      color: #f6b93b;
       font-size: 1.6rem;
-      user-select: none;
     }
     section.content p {
       font-size: 1.1rem;
       line-height: 1.5;
-      color: var(--text);
-      user-select: text;
+      color: #444;
     }
     .subtitulo {
       font-weight: 700;
       color: #0A3D62;
       margin: 20px 0 12px 0;
       font-size: 1.1rem;
-      user-select: none;
     }
     ul li {
       margin-bottom: 8px;
       font-size: 1rem;
-      user-select: text;
     }
 
+   
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       gap: 22px;
-      user-select: text;
     }
     .card {
       border-radius: 12px;
@@ -243,93 +203,92 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      user-select: text;
     }
     .card h3 {
       font-size: 1.2rem;
       display: flex;
       align-items: center;
       gap: 10px;
-      user-select: none;
     }
     .card h3 i {
       font-size: 1.5rem;
-      user-select: none;
     }
     .card p {
       font-weight: 400;
       font-size: 1rem;
       color: #f0f0f0;
-      user-select: text;
     }
     .card:hover {
       transform: translateY(-8px);
       box-shadow: 0 14px 28px rgba(0,0,0,0.15);
     }
+   
     .mercado {background-color: #0E79B2;}
     .certificacoes {background-color: #3AA655;}
     .tecnologias {background-color: #764BA2;}
     .dica {background-color: #F2994A;}
 
+    
+    .contato i {
+      margin-right: 8px;
+    }
     section#contatos p {
       font-size: 1.1rem;
       margin-bottom: 8px;
-      color: var(--text);
-      user-select: text;
+      color: #444;
     }
     section#contatos a {
-      color: var(--primary);
+      color: #1E3799;
       font-weight: 700;
       text-decoration: none;
       transition: color 0.3s ease;
-      user-select: text;
     }
     section#contatos a:hover {
-      color: var(--highlight);
+      color: #f6b93b;
       text-decoration: underline;
     }
 
+    
     section#ods a {
       font-weight: 700;
-      color: var(--primary);
+      color: #1E3799;
       text-decoration: none;
       transition: color 0.3s ease;
-      user-select: text;
     }
     section#ods a:hover {
-      color: var(--highlight);
+      color: #f6b93b;
       text-decoration: underline;
     }
 
+    
     footer {
-      background-color: var(--primary);
+      background-color: #0A3D62;
       color: white;
       text-align: center;
       padding: 18px 10px;
       font-size: 0.9rem;
       margin-top: 40px;
-      user-select: none;
     }
 
+    
     #btnTopo {
       position: fixed;
       bottom: 30px;
       right: 30px;
-      background-color: var(--neon);
+      background-color: #f6b93b;
       color: #222;
       border: none;
       padding: 12px 16px;
       border-radius: 50%;
       font-size: 1.5rem;
       cursor: pointer;
-      box-shadow: 0 6px 14px rgba(255,255,0,0.7);
+      box-shadow: 0 6px 14px rgba(246,185,59,0.5);
       transition: background-color 0.3s ease, transform 0.3s ease;
       display: none;
       z-index: 2000;
-      user-select: none;
     }
     #btnTopo:hover {
-      background-color: #e1e12f;
+      background-color: #e1a52f;
       transform: scale(1.1);
     }
 
@@ -350,18 +309,15 @@
         display: none;
       }
     }
-
   </style>
 </head>
-<body data-theme="light">
-
+<body>
 
 <header>
   <h1>Profissão: Desenvolvimento Web</h1>
-  <p>Site acadêmico criado por Kauã Valério Marques Da Silva</p>
+  <p>by Kauã Marques</p>
   <button id="btnSaibaMais">Saiba Mais</button>
 </header>
-
 
 <nav>
   <a href="#inicio">Início</a>
@@ -370,7 +326,6 @@
   <a href="#contatos">Redes e Contatos</a>
   <a href="#ods">ODS</a>
 </nav>
-
 
 <main>
   <aside id="resumo">
@@ -443,7 +398,7 @@
 <button id="btnTopo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
 
 <footer>
-  <p>&copy; 2025 - Kauã Valério Marques Da Silva | Aluno de Gestão da Tecnologia da Informação - UNIG</p>
+  <p>&copy; 2025 - Kauã Valério Marques Da Silva | GTI - UNIG</p>
 </footer>
 
 <script>
@@ -463,45 +418,6 @@
   });
   btnTopo.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  
-  const toggleDark = () => {
-    const body = document.body;
-    if (body.getAttribute('data-theme') === 'dark') {
-      body.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    } else {
-      body.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    }
-  };
-
-  
-  const btnDark = document.createElement('button');
-  btnDark.innerHTML = '<i class="fas fa-moon"></i>';
-  btnDark.id = 'btnDarkMode';
-  btnDark.title = 'Alternar modo claro/escuro';
-  Object.assign(btnDark.style, {
-    position: 'fixed',
-    bottom: '90px',
-    right: '30px',
-    padding: '12px',
-    borderRadius: '50%',
-    border: 'none',
-    backgroundColor: 'var(--primary)',
-    color: 'white',
-    cursor: 'pointer',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-    zIndex: 2100,
-  });
-  document.body.appendChild(btnDark);
-  btnDark.addEventListener('click', toggleDark);
-
-  
-  window.addEventListener('load', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', savedTheme);
   });
 </script>
 
